@@ -1,0 +1,11 @@
+<%= link_to "サークル新規作成ページへ", new_tweet_path %>
+
+<% if user_signed_in? %>
+<%= link_to "マイページへ", user_path(current_user.id) %>　
+<% end %>
+
+<% @tweets.each do |t| %>
+
+  <a href="/users/<%= t.user.id %>"><%= t.user.name %></a>　
+
+<% end %>
